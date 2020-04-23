@@ -77,23 +77,23 @@ public class SellerUserController {
         return "/common/success";
     }
 
-    @PostMapping("sellerRegister")
-    public String register(@Valid SellerRegisterForm sellerRegisterForm,
-                           BindingResult bindingResult,
-                           Map<String, Object> map){
-        SellerInfo sellerInfo = new SellerInfo();
-        sellerInfo.setUsername(sellerRegisterForm.getUsername());
-        sellerInfo.setPassword(sellerRegisterForm.getPassword());
-        sellerInfo.setPhone(sellerRegisterForm.getPhone());
-        try{
-            sellerService.create(sellerInfo);
-        }catch (SellException e){
-            map.put("msg", e.getMessage());
-            map.put("url", "/seller/sellerRegister");
-            return "/common/error";
-        }
-        map.put("msg", "注册成功");
-        map.put("url", "/");
-        return "/common/success";
-    }
+//    @PostMapping("sellerRegister")
+//    public String register(@Valid SellerRegisterForm sellerRegisterForm,
+//                           BindingResult bindingResult,
+//                           Map<String, Object> map){
+//        SellerInfo sellerInfo = new SellerInfo();
+//        sellerInfo.setUsername(sellerRegisterForm.getUsername());
+//        sellerInfo.setPassword(sellerRegisterForm.getPassword());
+//        sellerInfo.setPhone(sellerRegisterForm.getPhone());
+//        try{
+//            sellerService.create(sellerInfo);
+//        }catch (SellException e){
+//            map.put("msg", e.getMessage());
+//            map.put("url", "/seller/sellerRegister");
+//            return "/common/error";
+//        }
+//        map.put("msg", "注册成功");
+//        map.put("url", "/");
+//        return "/common/success";
+//    }
 }
